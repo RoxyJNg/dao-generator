@@ -1,6 +1,7 @@
 package com.null01;
 
 import com.null01.dbmetadata.DbConnection;
+import com.null01.dbmetadata.DbMetaData;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ import java.sql.DatabaseMetaData;
 public class DaoGeneratorJpaApplicationTests {
 	@Autowired
 	private DbConnection dbConnection;
+	@Autowired
+	private DbMetaData dbMetaData;
 
 	/**
 	 * 测试连接
@@ -25,6 +28,14 @@ public class DaoGeneratorJpaApplicationTests {
 		Connection conn = dbConnection.getConn();
 		DatabaseMetaData dbMetaData = conn.getMetaData();
 		System.err.println(dbMetaData.getURL());
+	}
+
+	/**
+	 * 测试获取表信息
+	 */
+	@Test
+	public void getTableInfo() throws Exception{
+		 dbMetaData.getTableInfoList();
 	}
 
 }

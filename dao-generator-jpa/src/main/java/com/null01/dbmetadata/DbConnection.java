@@ -1,6 +1,7 @@
 package com.null01.dbmetadata;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.null01.model.DbProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.null01.dbmetadata;
+package com.null01.model;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
