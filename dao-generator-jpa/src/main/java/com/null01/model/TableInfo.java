@@ -11,17 +11,11 @@ import java.util.List;
 public class TableInfo {
     private String tableName;
     private String tableDesc;
-    private String primaryKeyName;
+    private List<String> primaryKeysName;
     /**
      * 包含主键
      */
     private List<TableColumn> columnList;
-    private String engine;
-    private String charset;
-    /**
-     * 需要生成但不是表字段的属性
-     */
-    private List<TableColumn> transientList;
 
     public String getTableName() {
         return tableName;
@@ -39,12 +33,12 @@ public class TableInfo {
         this.tableDesc = tableDesc;
     }
 
-    public String getPrimaryKeyName() {
-        return primaryKeyName;
+    public List<String> getPrimaryKeysName() {
+        return primaryKeysName;
     }
 
-    public void setPrimaryKeyName(String primaryKeyName) {
-        this.primaryKeyName = primaryKeyName;
+    public void setPrimaryKeysName(List<String> primaryKeysName) {
+        this.primaryKeysName = primaryKeysName;
     }
 
     public List<TableColumn> getColumnList() {
@@ -55,27 +49,13 @@ public class TableInfo {
         this.columnList = columnList;
     }
 
-    public String getEngine() {
-        return engine;
-    }
-
-    public void setEngine(String engine) {
-        this.engine = engine;
-    }
-
-    public String getCharset() {
-        return charset;
-    }
-
-    public void setCharset(String charset) {
-        this.charset = charset;
-    }
-
-    public List<TableColumn> getTransientList() {
-        return transientList;
-    }
-
-    public void setTransientList(List<TableColumn> transientList) {
-        this.transientList = transientList;
+    @Override
+    public String toString() {
+        return "TableInfo{" +
+                "tableName='" + tableName + '\'' +
+                ", tableDesc='" + tableDesc + '\'' +
+                ", primaryKeysName=" + primaryKeysName +
+                ", columnList=" + columnList +
+                '}';
     }
 }

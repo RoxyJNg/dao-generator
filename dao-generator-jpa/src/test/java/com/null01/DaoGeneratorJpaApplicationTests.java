@@ -2,6 +2,7 @@ package com.null01;
 
 import com.null01.dbmetadata.DbConnection;
 import com.null01.dbmetadata.DbMetaData;
+import com.null01.model.TableInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -35,7 +37,8 @@ public class DaoGeneratorJpaApplicationTests {
 	 */
 	@Test
 	public void getTableInfo() throws Exception{
-		 dbMetaData.getTableInfoList();
+		List<TableInfo> tableInfoList =  dbMetaData.getTableInfoList();
+		System.err.println(tableInfoList);
 	}
 
 }

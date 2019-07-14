@@ -7,12 +7,16 @@ public class TableColumn {
 
     private String colName;
     private String colType;
-    private String colLength;
+    private Integer colLength;
     /**
      * 小数点后长度
      */
-    private String decimalPoint;
+    private Integer decimalPoint;
     private Boolean nullable;
+    /**
+     * 是否自增
+     */
+    private Boolean autoIncrement;
     /**
      * 字段注释
      */
@@ -34,19 +38,19 @@ public class TableColumn {
         this.colType = colType;
     }
 
-    public String getColLength() {
+    public Integer getColLength() {
         return colLength;
     }
 
-    public void setColLength(String colLength) {
+    public void setColLength(Integer colLength) {
         this.colLength = colLength;
     }
 
-    public String getDecimalPoint() {
+    public Integer getDecimalPoint() {
         return decimalPoint;
     }
 
-    public void setDecimalPoint(String decimalPoint) {
+    public void setDecimalPoint(Integer decimalPoint) {
         this.decimalPoint = decimalPoint;
     }
 
@@ -64,5 +68,26 @@ public class TableColumn {
 
     public void setColComment(String colComment) {
         this.colComment = colComment;
+    }
+
+    public Boolean getAutoIncrement() {
+        return autoIncrement;
+    }
+
+    public void setAutoIncrement(Boolean autoIncrement) {
+        this.autoIncrement = autoIncrement;
+    }
+
+    @Override
+    public String toString() {
+        return "TableColumn{" +
+                "colName='" + colName + '\'' +
+                ", colType='" + colType + '\'' +
+                ", colLength=" + colLength +
+                ", decimalPoint=" + decimalPoint +
+                ", nullable=" + nullable +
+                ", autoIncrement=" + autoIncrement +
+                ", colComment='" + colComment + '\'' +
+                '}';
     }
 }
