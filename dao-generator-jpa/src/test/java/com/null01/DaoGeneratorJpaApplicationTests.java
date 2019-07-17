@@ -3,6 +3,7 @@ package com.null01;
 import com.null01.dbmetadata.DbConnection;
 import com.null01.dbmetadata.DbMetaData;
 import com.null01.model.TableInfo;
+import com.null01.util.StringTransformUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,17 @@ public class DaoGeneratorJpaApplicationTests {
 	public void getTableInfo() throws Exception{
 		List<TableInfo> tableInfoList =  dbMetaData.getTableInfoList();
 		System.err.println(tableInfoList);
+	}
+
+	/**
+	 * 下划线命名法→骆驼式命名法
+	 */
+	@Test
+	public void testStringTransform() throws Exception{
+		String camelCase = StringTransformUtil.getInstance().underlineToCamelCase("dao_generator_template",false);
+		System.err.println(camelCase);
+		camelCase = StringTransformUtil.getInstance().underlineToCamelCase("d",false);
+		System.err.println(camelCase);
 	}
 
 }
