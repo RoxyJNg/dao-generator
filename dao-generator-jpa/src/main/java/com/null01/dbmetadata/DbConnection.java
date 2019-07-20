@@ -39,7 +39,7 @@ public class DbConnection {
             dataSource.setTestOnReturn(properties.isTestOnReturn());
             return dataSource.getConnection();
         }catch (Exception ex){
-            logger.error(ex.getMessage());
+            logger.error(ex.getMessage(),ex);
             return null;
         }
     }

@@ -78,7 +78,7 @@ public class DbMetaData {
             }
             return tableList;
         }catch (Exception ex){
-            logger.error(ex.getMessage());
+            logger.error(ex.getMessage(),ex);
             return new ArrayList<>();
         }
         finally {

@@ -1,5 +1,7 @@
 package com.null01.model;
 
+import java.util.List;
+
 /**
  * Created by Roxy on 2019/7/13.
  */
@@ -21,6 +23,43 @@ public class TableColumn {
      * 字段注释
      */
     private String colComment;
+
+    /**
+     * 转换为entity之后的属性类型
+     */
+    private String attrType;
+    /**
+     * 转换为entity之后的属性名称；
+     */
+    private String attrName;
+    /**
+     * 转换为entity之后的属性注解
+     */
+    private List<String> annotationList;
+
+    public String getAttrType() {
+        return attrType;
+    }
+
+    public void setAttrType(String attrType) {
+        this.attrType = attrType;
+    }
+
+    public String getAttrName() {
+        return attrName;
+    }
+
+    public void setAttrName(String attrName) {
+        this.attrName = attrName;
+    }
+
+    public List<String> getAnnotationList() {
+        return annotationList;
+    }
+
+    public void setAnnotationList(List<String> annotationList) {
+        this.annotationList = annotationList;
+    }
 
     public String getColName() {
         return colName;

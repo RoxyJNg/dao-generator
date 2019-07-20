@@ -1,7 +1,5 @@
 package com.null01.model;
 
-import javafx.scene.control.Tab;
-
 import java.util.List;
 
 /**
@@ -9,6 +7,7 @@ import java.util.List;
  * Created by Roxy on 2019/7/13.
  */
 public class TableInfo {
+    private List<String> annotationList;
     private String tableName;
     private String tableDesc;
     private List<String> primaryKeysName;
@@ -16,6 +15,14 @@ public class TableInfo {
      * 包含主键
      */
     private List<TableColumn> columnList;
+
+    public List<String> getAnnotationList() {
+        return annotationList;
+    }
+
+    public void setAnnotationList(List<String> annotationList) {
+        this.annotationList = annotationList;
+    }
 
     public String getTableName() {
         return tableName;
@@ -52,7 +59,8 @@ public class TableInfo {
     @Override
     public String toString() {
         return "TableInfo{" +
-                "tableName='" + tableName + '\'' +
+                "annotationList=" + annotationList +
+                ", tableName='" + tableName + '\'' +
                 ", tableDesc='" + tableDesc + '\'' +
                 ", primaryKeysName=" + primaryKeysName +
                 ", columnList=" + columnList +
