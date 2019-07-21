@@ -7,6 +7,9 @@ import java.util.List;
  * Created by Roxy on 2019/7/13.
  */
 public class TableInfo {
+    /**
+     * 注解
+     */
     private List<String> annotationList;
     private String tableName;
     private String tableDesc;

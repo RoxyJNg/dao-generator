@@ -1,6 +1,5 @@
 package com.null01.util;
 
-
 /**
  * 字符串转换工具类
  * Created by Roxy on 2019/7/17.
@@ -41,6 +40,6 @@ public class StringTransformUtil {
                 return firstLetterUpper?str.toUpperCase():str;
             }
         }
-
     }
+
 }
