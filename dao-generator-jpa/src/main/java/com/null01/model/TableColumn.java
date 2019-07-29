@@ -127,6 +127,9 @@ public class TableColumn {
                 ", nullable=" + nullable +
                 ", autoIncrement=" + autoIncrement +
                 ", colComment='" + colComment + '\'' +
+                ", attrType='" + attrType + '\'' +
+                ", attrName='" + attrName + '\'' +
+                ", annotationList=" + annotationList +
                 '}';
     }
 }

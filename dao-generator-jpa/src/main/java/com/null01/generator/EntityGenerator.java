@@ -6,6 +6,7 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +18,9 @@ import java.io.Writer;
  */
 @Component
 public class EntityGenerator {
+    @Autowired
+    private FmConfiguration fmConfiguration;
+
     @Value("${generating.path}")
     private String generatingPath;
 
@@ -24,12 +28,12 @@ public class EntityGenerator {
     /**
      * 生成实体类文件
      */
-    public void entityGenerate(TableInfo tableInfo) throws Exception{
+    public void entityGenerate(TableInfo tableInfo,String fileName) throws Exception{
         Writer out = null;
         try{
-            Configuration cfg = FmConfiguration.getInstance().getConf();
+            Configuration cfg = fmConfiguration.getConf();
             Template template = cfg.getTemplate("entity.ftl");
-            out = IOUtil.getInstance().getBufferedWriter(generatingPath);
+            out = IOUtil.getInstance().getBufferedWriter(generatingPath+"\\"+fileName);
             template.process(tableInfo, out);
             out.flush();
         }catch (Exception ex){
