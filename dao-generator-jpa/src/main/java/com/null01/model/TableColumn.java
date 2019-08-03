@@ -35,7 +35,7 @@ public class TableColumn {
     /**
      * 转换为entity之后的属性注解
      */
-    private List<String> annotationList;
+    private String annotation;
 
     public String getAttrType() {
         return attrType;
@@ -53,12 +53,12 @@ public class TableColumn {
         this.attrName = attrName;
     }
 
-    public List<String> getAnnotationList() {
-        return annotationList;
+    public String getAnnotation() {
+        return annotation;
     }
 
-    public void setAnnotationList(List<String> annotationList) {
-        this.annotationList = annotationList;
+    public void setAnnotation(String annotation) {
+        this.annotation = annotation;
     }
 
     public String getColName() {
@@ -129,7 +129,7 @@ public class TableColumn {
                 ", colComment='" + colComment + '\'' +
                 ", attrType='" + attrType + '\'' +
                 ", attrName='" + attrName + '\'' +
-                ", annotationList=" + annotationList +
+                ", annotation=" + annotation +
                 '}';
     }
 }

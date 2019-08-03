@@ -1,5 +1,7 @@
 package com.null01.mapper.mysql;
 
+import com.null01.model.TableColumn;
+import com.null01.model.TableInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -62,5 +64,43 @@ public class MysqlMappingUtil {
                 throw new Exception("Type "+ columnType +" is not supported.");
             }
         }
+    }
+
+    /**
+     * 数据库字段→注解
+     */
+    public String colAnnotationMapping(TableColumn tableColumn,boolean isPrimaryKey){
+        StringBuffer anno = new StringBuffer();
+        if (isPrimaryKey){
+            anno.append("@Id\n");
+            if(tableColumn.getAutoIncrement()){
+                anno.append("@GeneratedValue(strategy = IDENTITY)\n");
+            }
+        }
+        if (tableColumn.getAttrType().equals("Date")){
+            anno.append("@Temporal(TemporalType.DATE)\n");
+        }
+        anno.append("@Column(name = \""+tableColumn.getColName()+"\"");
+        if(tableColumn.getAttrType().equals("BigDecimal") && tableColumn.getDecimalPoint()!=null){
+            anno.append(", precision = "+tableColumn.getColLength());
+            anno.append(", scale = "+tableColumn.getDecimalPoint());
+        }else if (tableColumn.getColLength()!=null){
+            anno.append(", length = "+tableColumn.getColLength());
+        }
+        if (tableColumn.getNullable()!=null){
+            anno.append(",nullable ="+tableColumn.getNullable());
+        }
+        anno.append(")\n");
+        return anno.toString();
+    }
+
+    /**
+     * 数据库表→注解
+     */
+    public String tableAnnotationMapping(TableInfo tableInfo){
+        String anno = "@SuppressWarnings(\"serial\")\n" +
+                        "@Entity\n"+
+                        "@Table(name = \""+tableInfo.getTableName()+"\")";
+        return anno;
     }
 }

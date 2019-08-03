@@ -83,7 +83,7 @@ public class DaoGeneratorJpaApplicationTests {
 	}
 
     /**
-     * 数据库表→java实体
+     * 生成java文件
      * @throws Exception
      */
     @Test

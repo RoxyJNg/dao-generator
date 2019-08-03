@@ -10,7 +10,7 @@ public class TableInfo {
     /**
      * 注解
      */
-    private List<String> annotationList;
+    private String annotation;
     private String tableName;
     private String tableDesc;
     private List<String> primaryKeysName;
@@ -19,12 +19,12 @@ public class TableInfo {
      */
     private List<TableColumn> columnList;
 
-    public List<String> getAnnotationList() {
-        return annotationList;
+    public String getAnnotation() {
+        return annotation;
     }
 
-    public void setAnnotationList(List<String> annotationList) {
-        this.annotationList = annotationList;
+    public void setAnnotation(String annotation) {
+        this.annotation = annotation;
     }
 
     public String getTableName() {
@@ -62,7 +62,7 @@ public class TableInfo {
     @Override
     public String toString() {
         return "TableInfo{" +
-                "annotationList=" + annotationList +
+                "annotation=" + annotation +
                 ", tableName='" + tableName + '\'' +
                 ", tableDesc='" + tableDesc + '\'' +
                 ", primaryKeysName=" + primaryKeysName +
