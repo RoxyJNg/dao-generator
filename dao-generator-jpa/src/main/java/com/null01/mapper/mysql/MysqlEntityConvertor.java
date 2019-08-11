@@ -25,6 +25,7 @@ public class MysqlEntityConvertor implements EntityConvertor{
             List<TableColumn> columnList = tableInfo.getColumnList();
             columnList.stream().forEach(column ->{
                 column.setAttrName(StringTransformUtil.getInstance().underlineToCamelCase(column.getColName(),false));
+                column.setAttrNameWithFirstLetterUpper(StringTransformUtil.getInstance().underlineToCamelCase(column.getColName(),true));
                 try {
                     column.setAttrType(MysqlMappingUtil.getInstance().columnTypeMapping(column.getColType()));
                 }catch (Exception ex){}

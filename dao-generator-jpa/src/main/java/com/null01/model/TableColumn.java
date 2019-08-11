@@ -33,9 +33,21 @@ public class TableColumn {
      */
     private String attrName;
     /**
+     * 首字母大写的属性名，用于setter getter方法
+     */
+    private String attrNameWithFirstLetterUpper;
+    /**
      * 转换为entity之后的属性注解
      */
     private String annotation;
+
+    public String getAttrNameWithFirstLetterUpper() {
+        return attrNameWithFirstLetterUpper;
+    }
+
+    public void setAttrNameWithFirstLetterUpper(String attrNameWithFirstLetterUpper) {
+        this.attrNameWithFirstLetterUpper = attrNameWithFirstLetterUpper;
+    }
 
     public String getAttrType() {
         return attrType;

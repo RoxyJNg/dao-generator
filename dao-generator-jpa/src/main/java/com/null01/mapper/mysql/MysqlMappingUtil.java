@@ -90,7 +90,7 @@ public class MysqlMappingUtil {
         if (tableColumn.getNullable()!=null){
             anno.append(",nullable ="+tableColumn.getNullable());
         }
-        anno.append(")\n");
+        anno.append(")");
         return anno.toString();
     }
 
