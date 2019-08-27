@@ -69,6 +69,7 @@ public class DaoGeneratorJpaApplicationTests {
 		System.err.println(camelCase);
 		camelCase = StringTransformUtil.getInstance().underlineToCamelCase("d",false);
 		System.err.println(camelCase);
+
 	}
 
 	/**
@@ -83,7 +84,7 @@ public class DaoGeneratorJpaApplicationTests {
 	}
 
     /**
-     * 生成java文件
+     * 生成java实体类文件
      * @throws Exception
      */
     @Test
